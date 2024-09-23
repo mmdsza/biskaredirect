@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Twitter and X to Bluesky Redirector",
+    "version": "1.0",
+    "description": "Automatically redirects Twitter and X URLs to Bluesky",
+    "permissions": [
+      "declarativeNetRequest",
+      "webNavigation",
+      "tabs"
+    ],
+    "host_permissions": [
+      "*://*.twitter.com/*",
+      "*://*.x.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "declarative_net_request": {
+      "rule_resources": [{
+        "id": "redirect_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }]
+    },
+    "action": {
+      "default_title": "Twitter and X to Bluesky Redirector"
+    }
+  }
